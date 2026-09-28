@@ -269,7 +269,7 @@ class PageController extends Controller
             [
                 'nama' => 'Agent Planner & Task Decomposition',
                 'modul' => 'Agent Runtime',
-                'penanggung_jawab' => '[NAMA_LENGKAP_MAHASISWA]',
+                'penanggung_jawab' => $profil['nama'],
                 'peran' => 'Ketua & Integrator',
                 'status' => 'Selesai',
                 'statusType' => 'success',
@@ -279,7 +279,7 @@ class PageController extends Controller
             [
                 'nama' => 'Document Ingestion & Vector Indexing',
                 'modul' => 'Knowledge',
-                'penanggung_jawab' => 'Anggota 2 - [NRP_MAHASISWA]',
+                'penanggung_jawab' => 'Anggota 2 ('.$profil['nrp'].')',
                 'peran' => 'Data Engineer',
                 'status' => 'Berjalan',
                 'statusType' => 'info',
