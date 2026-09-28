@@ -22,9 +22,9 @@ return [
     | Identitas Utama
     |--------------------------------------------------------------------------
     */
-    'nama' => env('MAHASISWA_NAMA', '[NAMA_LENGKAP_MAHASISWA]'),
-    'nrp' => env('MAHASISWA_NRP', '[NRP_MAHASISWA]'),
-    'kelas' => env('MAHASISWA_KELAS', '[KELAS_PBKK]'),
+    'nama' => env('MAHASISWA_NAMA', 'Adriel Mahira Dharma'),
+    'nrp' => env('MAHASISWA_NRP', '5025241097'),
+    'kelas' => env('MAHASISWA_KELAS', 'PBKK B'),
 
     /*
     |--------------------------------------------------------------------------

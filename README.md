@@ -6,13 +6,9 @@
 
 | Identitas | Nilai |
 |---|---|
-| Nama Mahasiswa | `[NAMA_LENGKAP_MAHASISWA]` |
-| NRP | `[NRP_MAHASISWA]` |
-| Kelas PBKK | `[KELAS_PBKK]` |
-
-> **Ganti identitas cukup SATU KALI** di `config/mahasiswa.php` (atau melalui
-> variabel `MAHASISWA_*` pada `.env`). Beranda, Profil, Navbar, dan Footer
-> otomatis mengikuti karena semuanya membaca sumber tunggal yang sama.
+| Nama Mahasiswa | `Adriel Mahira Dharma` |
+| NRP | `5025241097` |
+| Kelas PBKK | `PBKK B` |
 
 ---
 
