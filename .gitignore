@@ -1,0 +1,51 @@
+# =============================================================================
+# .gitignore - Tugas Mandiri 4 PBKK
+# -----------------------------------------------------------------------------
+# Tujuan: memastikan berkas dependensi & rahasia TIDAK ikut ter-commit.
+# Catatan: gitignore tidak mendukung komentar di akhir baris, jadi setiap
+# penjelasan ditulis pada baris terpisah.
+# =============================================================================
+
+# --- WAJIB DIABAIKAN ----------------------------------------------------------
+# dependensi PHP (dipasang ulang dengan `composer install`)
+/vendor
+# dependensi JS  (dipasang ulang dengan `npm install`)
+/node_modules
+# kredensial lokal; yang di-commit hanya `.env.example`
+.env
+.env.backup
+.env.production
+
+# --- Hasil build & aset sementara --------------------------------------------
+# hasil `npm run build` (dibuat ulang oleh Vite)
+/public/build
+# penanda dev server Vite
+/public/hot
+/public/fonts-manifest.dev.json
+/public/storage
+
+# --- Cache & runtime Laravel --------------------------------------------------
+/storage/*.key
+/storage/pail
+/bootstrap/ssr
+
+# --- Berkas IDE & OS ----------------------------------------------------------
+.idea/
+.vscode/
+.zed/
+.nova/
+.phpactor.json
+.codex
+.cursor/
+_ide_helper.php
+_ide_helper_models.php
+Homestead.json
+Homestead.yaml
+.DS_Store
+Thumbs.db
+*.log
+auth.json
+
+# --- Cache pengujian ----------------------------------------------------------
+.phpunit.result.cache
+.phpunit.cache

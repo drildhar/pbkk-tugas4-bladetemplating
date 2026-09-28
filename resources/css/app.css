@@ -1,0 +1,122 @@
+/* ===========================================================================
+ * resources/css/app.css
+ * ---------------------------------------------------------------------------
+ * Entry point CSS yang dipanggil dari Blade melalui:
+ *     @vite(['resources/css/app.css', 'resources/js/app.js'])
+ *
+ * Tiga directive di bawah adalah "kontrak" wajib Tailwind v3:
+ *   @tailwind base;       -> reset/normalize (Preflight)
+ *   @tailwind components; -> lapisan kelas komponen (@layer components)
+ *   @tailwind utilities;  -> seluruh utilitas yang terdeteksi di `content`
+ * =========================================================================== */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------------------------------------------------------
+ * 1. BASE LAYER - gaya dasar global (opsional, memakai @apply).
+ * ------------------------------------------------------------------------- */
+@layer base {
+    html {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+        @apply font-sans antialiased;
+    }
+
+    /* Scrollbar tipis yang menyesuaikan mode terang/gelap. */
+    ::-webkit-scrollbar {
+        @apply h-2 w-2;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply rounded-full bg-slate-300 dark:bg-slate-700;
+    }
+}
+
+/* ---------------------------------------------------------------------------
+ * 2. COMPONENTS LAYER - kelas yang dipakai berulang di banyak Blade.
+ *    Ini wujud nyata prinsip DRY pada sisi styling.
+ * ------------------------------------------------------------------------- */
+@layer components {
+    /* Kartu dasar: dipakai sebagai fondasi <x-info-card> & panel lain. */
+    .card-surface {
+        @apply rounded-2xl border border-slate-200 bg-white shadow-sm
+               transition duration-300
+               dark:border-slate-800 dark:bg-slate-900;
+    }
+
+    /* Tombol utama (aksi primer). */
+    .btn-primary {
+        @apply inline-flex items-center justify-center gap-2 rounded-xl
+               bg-its-600 px-5 py-2.5 text-sm font-semibold text-white
+               shadow-sm transition
+               hover:bg-its-700 focus:outline-none focus:ring-2
+               focus:ring-its-500 focus:ring-offset-2
+               disabled:cursor-not-allowed disabled:opacity-60
+               dark:focus:ring-offset-slate-950;
+    }
+
+    /* Tombol sekunder (outline). */
+    .btn-secondary {
+        @apply inline-flex items-center justify-center gap-2 rounded-xl
+               border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold
+               text-slate-700 shadow-sm transition
+               hover:border-slate-400 hover:bg-slate-50
+               focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2
+               dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200
+               dark:hover:bg-slate-800 dark:focus:ring-offset-slate-950;
+    }
+
+    /* Input & textarea form yang seragam. */
+    .form-input {
+        @apply block w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5
+               text-sm text-slate-900 shadow-sm transition placeholder:text-slate-400
+               focus:border-its-500 focus:outline-none focus:ring-2 focus:ring-its-500/30
+               dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100
+               dark:placeholder:text-slate-500;
+    }
+
+    /* Label form. */
+    .form-label {
+        @apply mb-1.5 block text-sm font-medium text-slate-700 dark:text-slate-300;
+    }
+
+    /* Tautan navigasi dengan indikator active state. */
+    .nav-link {
+        @apply relative rounded-lg px-3 py-2 text-sm font-medium transition
+               text-slate-600 hover:bg-slate-100 hover:text-slate-900
+               dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white;
+    }
+
+    .nav-link-active {
+        @apply bg-its-50 text-its-700
+               dark:bg-its-500/10 dark:text-its-300;
+    }
+
+    /* Badge kecil untuk status/tag. */
+    .badge {
+        @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5
+               text-xs font-semibold ring-1 ring-inset;
+    }
+}
+
+/* ---------------------------------------------------------------------------
+ * 3. UTILITIES LAYER - utilitas kustom tambahan.
+ * ------------------------------------------------------------------------- */
+@layer utilities {
+    /* Gradasi teks judul hero. */
+    .text-gradient {
+        @apply bg-gradient-to-r from-its-600 to-sky-400 bg-clip-text text-transparent;
+    }
+
+    /* Grid pola latar dekoratif (murni CSS, tanpa aset/CDN). */
+    .bg-grid-pattern {
+        background-image:
+            linear-gradient(to right, rgb(148 163 184 / 0.15) 1px, transparent 1px),
+            linear-gradient(to bottom, rgb(148 163 184 / 0.15) 1px, transparent 1px);
+        background-size: 32px 32px;
+    }
+}
